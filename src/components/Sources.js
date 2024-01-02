@@ -5,6 +5,8 @@ import youtubeSources from "../sources/youtube";
 import podcastSources from "../sources/podcast";
 import { useState } from "react";
 import useSourceKeyboardNav from "@/hooks/useSourceKeyboardNav";
+import { Button } from "@/components/ui/button"
+
 
 export default function Sources({ setSelectedSource, selectedSourceURL }) {
   const sources = [
@@ -57,7 +59,7 @@ export default function Sources({ setSelectedSource, selectedSourceURL }) {
                   }}
                   key={itemIndex}
                 >
-                  <p
+                  <Button
                     className={
                       itemIndex === tempSourceIndex &&
                       categoryIndex === tempCategoryIndex
@@ -75,7 +77,7 @@ export default function Sources({ setSelectedSource, selectedSourceURL }) {
                     }}
                   >
                     {item.title}
-                  </p>
+                  </Button>
                 </div>
               ))}
             </ul>
