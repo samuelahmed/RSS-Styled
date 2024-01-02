@@ -3,7 +3,7 @@ export default function Header({
   selectedSourceFeedLength,
 }) {
   return (
-    <header className="border-b-2 border-b-foreground fixed top-0 w-full z-50 bg-background text-center">
+    <header className="border-b-2 fixed top-0 w-full z-50 text-center">
       <div>
         {selectedSourceName ? selectedSourceName : "No Source Selected"}
         &nbsp;&nbsp;&nbsp;
