@@ -1,3 +1,7 @@
+import { clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+
 export function sortItemsByDate(a, b) {
   const aDate = new Date(a.pubDate || a.published || a.updated);
   const bDate = new Date(b.pubDate || b.published || b.updated);
@@ -55,4 +59,9 @@ export function timeAgo(item) {
     }
   }
   return "just now";
+}
+
+ 
+export function cn(...inputs) {
+  return twMerge(clsx(inputs))
 }
