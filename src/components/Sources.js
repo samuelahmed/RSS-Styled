@@ -5,8 +5,7 @@ import youtubeSources from "../sources/youtube";
 import podcastSources from "../sources/podcast";
 import { useState } from "react";
 import useSourceKeyboardNav from "@/hooks/useSourceKeyboardNav";
-import { Button } from "@/components/ui/button"
-
+import { Button } from "@/components/ui/button";
 
 export default function Sources({ setSelectedSource, selectedSourceURL }) {
   const sources = [
@@ -34,22 +33,22 @@ export default function Sources({ setSelectedSource, selectedSourceURL }) {
 
   return (
     <aside>
-      <div className="text-center fixed top-6 z-40 w-1/3 md:w-1/5 border-r-2 border-b-2 bg-background border-foreground">
+      {/* <div className="text-center fixed top-6 z-40 w-1/3 md:w-1/5 border-r-2 border-b-2 bg-background border-foreground">
         Feed Sources
-      </div>
+      </div> */}
       <div
-        className="scrollbar fixed top-12 overflow-y-auto scrollbar w-1/3 md:w-1/5 border-r-2 border-r-foreground"
-        style={{ height: "92vh" }}
+        className="scrollbar fixed top-6 overflow-y-auto scrollbar w-1/3 md:w-1/5 border-r-2"
+        style={{ height: "94vh" }}
       >
         {sourceData.map((category, categoryIndex) => (
           <div key={categoryIndex}>
             <p
               key={categoryIndex}
-              className="text-center border-y-2 border-foreground"
+              className="text-left border-t-2 text-md md:text-lg pl-3"
             >
               {sources[categoryIndex].title}
             </p>
-            <ul className="h-40 pl-1 overflow-auto scrollbar">
+            <ul className="h-40 pl-3 py-1 overflow-auto scrollbar space-y-0.5">
               {category.map((item, itemIndex) => (
                 <div
                   ref={(el) => {
@@ -60,11 +59,13 @@ export default function Sources({ setSelectedSource, selectedSourceURL }) {
                   key={itemIndex}
                 >
                   <Button
+                    variant="outline"
                     className={
-                      itemIndex === tempSourceIndex &&
+                      "w-full overflow-x-auto overflow-y-hidden justify-start px-1 text-xs md:text-base " +
+                      (itemIndex === tempSourceIndex &&
                       categoryIndex === tempCategoryIndex
-                        ? "bg-blue-600"
-                        : "bg-background hover:bg-blue-600"
+                        ? "bg-primary text-primary-foreground"
+                        : "hover:bg-primary hover:text-primary-foreground")
                     }
                     onClick={() => {
                       setTempSourceIndex(itemIndex);
