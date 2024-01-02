@@ -1,0 +1,13 @@
+- Keyboard Navigation:
+  - Select source within feed using [up arrow key] and [down arrow key]
+  - Select source category using [tab] down or [shift] + [tab] up
+  - Load desired feed using [enter]
+  - Select desired article using [up arrow key] and [down arrow key]
+  - Open selected article using [enter]
+  - Close article using [esc]
+  - Close selected source using [left arrow key]
+
+- Mouse:
+  - Select source using mouse click
+  - Open desired article using mouse click
+  - Close articles click on [esc] in the top right corner
