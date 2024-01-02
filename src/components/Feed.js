@@ -11,7 +11,6 @@ export default function Feed({
   setSelectedArticle,
   selectedSourceURL,
 }) {
-  
   let counter = 1;
   const [tempArticleIndex, setTempArticleIndex] = useState(0);
 
@@ -70,7 +69,7 @@ export default function Feed({
 
   return (
     <>
-      <div className="h-screen flex-grow text-gray-200 px-1 overflow-auto scrollbar mb-6">
+      <div className="h-screen flex-grow px-1 overflow-auto scrollbar mb-6">
         {selectedSourceFeed.map((item, index) => (
           <div
             key={index}
@@ -78,7 +77,7 @@ export default function Feed({
             className={
               tempArticleIndex === index
                 ? "bg-blue-600"
-                : "bg-background hover:bg-blue-600 cursor-pointer"
+                : " hover:bg-blue-600 cursor-pointer"
             }
             onClick={() => {
               setTempArticleIndex(index);
