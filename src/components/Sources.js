@@ -47,7 +47,7 @@ export default function Sources({ setSelectedSource, selectedSourceURL }) {
             >
               {sources[categoryIndex].title}
             </h4>
-            <ul className="h-40 py-1 overflow-auto scrollbar space-y-0.5">
+            <ul className="h-40 py-1 overflow-auto scrollbar">
               {category.map((item, itemIndex) => (
                 <div
                   ref={(el) => {
