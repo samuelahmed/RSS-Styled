@@ -39,14 +39,14 @@ export default function Sources({ setSelectedSource, selectedSourceURL }) {
       >
         {sourceData.map((category, categoryIndex) => (
           <div key={categoryIndex}>
-            <p
+            <h4
               key={categoryIndex}
-              className={`text-left pt-2 ${
+              className={`text-left pt-2 scroll-m-20 text-lg font-semibold tracking-tight" ${
                 categoryIndex !== 0 ? "border-t-2" : ""
               } text-md md:text-lg pl-3`}
             >
               {sources[categoryIndex].title}
-            </p>
+            </h4>
             <ul className="h-40 py-1 overflow-auto scrollbar space-y-0.5">
               {category.map((item, itemIndex) => (
                 <div
