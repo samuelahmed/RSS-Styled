@@ -33,22 +33,21 @@ export default function Sources({ setSelectedSource, selectedSourceURL }) {
 
   return (
     <aside>
-      {/* <div className="text-center fixed top-6 z-40 w-1/3 md:w-1/5 border-r-2 border-b-2 bg-background border-foreground">
-        Feed Sources
-      </div> */}
       <div
-        className="scrollbar fixed top-6 overflow-y-auto scrollbar w-1/3 md:w-1/5 border-r-2"
+        className="scrollbar fixed overflow-y-auto scrollbar w-1/3 md:w-1/5 border-r-2"
         style={{ height: "94vh" }}
       >
         {sourceData.map((category, categoryIndex) => (
           <div key={categoryIndex}>
             <p
               key={categoryIndex}
-              className="text-left border-t-2 text-md md:text-lg pl-3"
+              className={`text-left ${
+                categoryIndex !== 0 ? "border-t-2" : ""
+              } text-md md:text-lg pl-3`}
             >
               {sources[categoryIndex].title}
             </p>
-            <ul className="h-40 pl-3 py-1 overflow-auto scrollbar space-y-0.5">
+            <ul className="h-40 pl-3 pr-0.5 py-1 overflow-auto scrollbar space-y-0.5">
               {category.map((item, itemIndex) => (
                 <div
                   ref={(el) => {

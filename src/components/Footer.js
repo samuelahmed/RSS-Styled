@@ -13,7 +13,7 @@ export default function Header() {
   }, []);
 
   return (
-    <footer className="border-t-2 border-t-foreground fixed bottom-0 w-full z-50 bg-background text-center">
+    <footer className="border-t-2 fixed bottom-0 w-full z-50 bg-background text-center">
       <div>{time ? time : "welcome"}</div>
     </footer>
   );
