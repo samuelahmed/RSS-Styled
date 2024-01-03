@@ -8,7 +8,6 @@ import Feed from "./Feed";
 import ArticleModal from "./ArticleModal";
 // import useFetchFeed from "@/hooks/useFetchFeed";
 import useFetchFeed from "@/hooks/useFetchFeed";
-
 import useKeyboardNavActive from "@/hooks/useKeyboardNavActive";
 
 export default function AppContainer() {
@@ -33,12 +32,14 @@ export default function AppContainer() {
         selectedSourceFeedLength={selectedSource.feed.length}
         selectedSourceName={selectedSource.name}
       />
+      
       <main
         className={`pt-6 flex flex-row ${
           keyboardNavActive ? "keyboard-nav" : ""
         }`}
       >
         <div className="w-1/3 md:w-1/5">
+
           <Sources
             selectedSourceURL={selectedSource.url}
             setSelectedSource={setSelectedSource}
@@ -62,6 +63,7 @@ export default function AppContainer() {
           setShowModal={setShowModal}
         />
       </main>
+      
       <Footer />
     </div>
   );
