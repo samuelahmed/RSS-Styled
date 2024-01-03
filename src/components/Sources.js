@@ -41,13 +41,13 @@ export default function Sources({ setSelectedSource, selectedSourceURL }) {
           <div key={categoryIndex}>
             <p
               key={categoryIndex}
-              className={`text-left ${
+              className={`text-left pt-2 ${
                 categoryIndex !== 0 ? "border-t-2" : ""
               } text-md md:text-lg pl-3`}
             >
               {sources[categoryIndex].title}
             </p>
-            <ul className="h-40 pl-3 pr-0.5 py-1 overflow-auto scrollbar space-y-0.5">
+            <ul className="h-40 py-1 overflow-auto scrollbar space-y-0.5">
               {category.map((item, itemIndex) => (
                 <div
                   ref={(el) => {
@@ -60,7 +60,7 @@ export default function Sources({ setSelectedSource, selectedSourceURL }) {
                   <Button
                     variant="outline"
                     className={
-                      "w-full overflow-x-auto overflow-y-hidden justify-start px-1 text-xs md:text-base " +
+                      "w-full overflow-x-auto overflow-y-hidden justify-start px-3 text-xs md:text-base " +
                       (itemIndex === tempSourceIndex &&
                       categoryIndex === tempCategoryIndex
                         ? "bg-primary text-primary-foreground"
