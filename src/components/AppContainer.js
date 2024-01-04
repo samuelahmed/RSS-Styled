@@ -34,7 +34,7 @@ export default function AppContainer() {
       />
       
       <main
-        className={`pt-6 flex flex-row ${
+        className={`pt-8 flex flex-row ${
           keyboardNavActive ? "keyboard-nav" : ""
         }`}
       >
