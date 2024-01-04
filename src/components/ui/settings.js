@@ -4,6 +4,8 @@ import {
   Settings as SettingsIcon,
   PlusCircle,
   CircleUserRound,
+  FolderPlus,
+  LogOut,
 } from "lucide-react";
 import {
   Menubar,
@@ -40,12 +42,13 @@ export default function Settings() {
           <MenubarContent>
             <MenubarItem>
               <PlusCircle className="h-4" />
-              &nbsp;Category
-            </MenubarItem>
-            <MenubarItem>
-              <PlusCircle className="h-4" />
               &nbsp;Source
             </MenubarItem>
+            <MenubarItem>
+              <FolderPlus className="h-4" />
+              &nbsp;Category
+            </MenubarItem>
+
             <MenubarItem>
               <CircleUserRound className="h-4" />
               &nbsp;Account
@@ -58,8 +61,8 @@ export default function Settings() {
                     variant="outline"
                     size="icon"
                   >
-                    <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 " />
-                    <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 " />
+                    <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                    <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                     <span className="font-normal"> &nbsp;&nbsp;Theme</span>
                   </Button>
                 </DropdownMenuTrigger>
@@ -79,7 +82,10 @@ export default function Settings() {
             </MenubarItem>
 
             <MenubarSeparator />
-            <MenubarItem>Logout</MenubarItem>
+            <MenubarItem>
+              <LogOut className="h-4" />
+              Logout
+            </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
       </Menubar>
