@@ -1,6 +1,16 @@
 import { useEffect, useState, createRef, useRef } from "react";
 import { formatDate } from "../utils";
 import useFeedKeyboardNav from "@/hooks/useFeedKeyboardNav";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 export default function Feed({
   fetchedFeed,
@@ -70,33 +80,44 @@ export default function Feed({
   return (
     <>
       <div className="h-screen flex-grow px-1 overflow-auto scrollbar mb-6">
-        {selectedSourceFeed.map((item, index) => (
-          <div
-            key={index}
-            ref={index === tempArticleIndex ? itemRef : null}
-            className={
-              tempArticleIndex === index
-                ? "bg-blue-600"
-                : " hover:bg-blue-600 cursor-pointer"
-            }
-            onClick={() => {
-              setTempArticleIndex(index);
-              setSelectedArticleIndex(index);
-              setSelectedArticleContent(item);
-              setShowModal(true);
-            }}
-          >
-            <div className="flex flex-row overflow-hidden h-6">
-              <div className="pr-2 w-8"> {counter++}.</div>
-              <div className="pr-4 w-52 min-w-fit overflow-hidden hidden md:block">
-                {formatDate(item)}
-              </div>
-              <div className="overflow-auto scrollbar">
-                {typeof item.title === "string" ? item.title : item.title?._}{" "}
-              </div>
-            </div>
-          </div>
-        ))}
+        <Table>
+          <TableCaption>Select a source to populate your feed</TableCaption>
+          <TableHeader>
+            <TableRow>
+              {" "}
+              <TableHead></TableHead>
+              <TableHead className="w-[100px]">Date</TableHead>
+              <TableHead>Title</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {selectedSourceFeed.map((item, index) => (
+              <TableRow
+                key={index}
+                ref={index === tempArticleIndex ? itemRef : null}
+                className={
+                  tempArticleIndex === index
+                    ? "bg-primary text-primary-foreground"
+                    : "hover:bg-primary hover:text-primary-foreground"
+                }
+                onClick={() => {
+                  setTempArticleIndex(index);
+                  setSelectedArticleIndex(index);
+                  setSelectedArticleContent(item);
+                  setShowModal(true);
+                }}
+              >
+                <TableCell className="font-medium">{counter++}.</TableCell>
+                <TableCell className="font-medium flex flex-row whitespace-nowrap">
+                  {formatDate(item)}
+                </TableCell>
+                <TableCell>
+                  {typeof item.title === "string" ? item.title : item.title?._}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </div>
     </>
   );
