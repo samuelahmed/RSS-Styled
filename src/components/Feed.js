@@ -79,17 +79,16 @@ export default function Feed({
 
   return (
     <>
-      <div className="h-screen flex-grow px-1 overflow-auto scrollbar mb-6">
+      <div className="h-screen flex-grow px-1 overflow-auto scrollbar mb-6 pt-1">
         <Table>
           <TableCaption>Select a source to populate your feed</TableCaption>
-          <TableHeader>
+          {/* <TableHeader>
             <TableRow>
-              {" "}
               <TableHead></TableHead>
               <TableHead className="w-[100px]">Date</TableHead>
               <TableHead>Title</TableHead>
             </TableRow>
-          </TableHeader>
+          </TableHeader> */}
           <TableBody>
             {selectedSourceFeed.map((item, index) => (
               <TableRow
