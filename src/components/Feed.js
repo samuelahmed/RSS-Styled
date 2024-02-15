@@ -81,14 +81,7 @@ export default function Feed({
     <>
       <div className="h-screen flex-grow px-1 overflow-auto scrollbar mb-6 pt-1">
         <Table>
-          <TableCaption>Select a source to populate your feed</TableCaption>
-          {/* <TableHeader>
-            <TableRow>
-              <TableHead></TableHead>
-              <TableHead className="w-[100px]">Date</TableHead>
-              <TableHead>Title</TableHead>
-            </TableRow>
-          </TableHeader> */}
+          {/* <TableCaption>Select a source to populate your feed</TableCaption> */}
           <TableBody>
             {selectedSourceFeed.map((item, index) => (
               <TableRow
@@ -96,9 +89,12 @@ export default function Feed({
                 ref={index === tempArticleIndex ? itemRef : null}
                 className={
                   tempArticleIndex === index
-                    ? "bg-primary text-primary-foreground"
-                    : "hover:bg-primary hover:text-primary-foreground"
+                    ? "bg-primary hover:bg-primary text-primary-foreground cursor-pointer"
+                    : "hover:bg-primary hover:text-primary-foreground cursor-pointer"
                 }
+
+
+                
                 onClick={() => {
                   setTempArticleIndex(index);
                   setSelectedArticleIndex(index);
