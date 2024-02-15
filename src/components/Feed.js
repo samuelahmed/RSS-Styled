@@ -89,8 +89,8 @@ export default function Feed({
                 ref={index === tempArticleIndex ? itemRef : null}
                 className={
                   tempArticleIndex === index
-                    ? "bg-primary hover:bg-primary text-primary-foreground cursor-pointer"
-                    : "hover:bg-primary hover:text-primary-foreground cursor-pointer"
+                    ? "bg-foreground hover:bg-primary text-primary-foreground cursor-pointer"
+                    : "hover:bg-foreground hover:text-primary-foreground cursor-pointer"
                 }
 
 

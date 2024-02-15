@@ -67,7 +67,7 @@ export default function Settings() {
                   </Button>
                 </DropdownMenuTrigger>
 
-                <DropdownMenuContent align="end">
+                <DropdownMenuContent className="bg-background" align="end">
                   <DropdownMenuItem onClick={() => setTheme("light")}>
                     Light
                   </DropdownMenuItem>

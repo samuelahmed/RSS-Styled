@@ -31,7 +31,7 @@ export default function DisplayModal({
           >
             <div
               onClick={(e) => e.stopPropagation()}
-              className="shadow-lg relative flex flex-col w-full h-full bg-[rgb(26,26,26)] border-white border-2 text-gray-200 outline-none focus:outline-none overflow-auto scrollbar p-2"
+              className="shadow-lg relative flex flex-col w-full h-full bg-background  border-2 text-foreground outline-none focus:outline-none overflow-auto scrollbar p-2"
             >
               {/* modal content */}
               <div className="space-y-2">
@@ -81,7 +81,7 @@ export default function DisplayModal({
                 )}
                 {/* Description */}
                 <p
-                  className="text-gray-200"
+                  className=""
                   dangerouslySetInnerHTML={{
                     __html: DOMPurify.sanitize(
                       selectedArticle?.["media:group"]?.["media:description"] ||
@@ -92,7 +92,7 @@ export default function DisplayModal({
                   }}
                 ></p>
                 <p
-                  className="text-gray-200"
+                  className=""
                   dangerouslySetInnerHTML={{
                     __html: DOMPurify.sanitize(
                       typeof selectedArticle?.content === "string"
@@ -105,7 +105,7 @@ export default function DisplayModal({
                   }}
                 ></p>
                 <p
-                  className="text-gray-200"
+                  className=""
                   dangerouslySetInnerHTML={{
                     __html: DOMPurify.sanitize(
                       typeof selectedArticle?.summary === "string"
@@ -115,7 +115,7 @@ export default function DisplayModal({
                   }}
                 ></p>
                 <p
-                  className="text-gray-200"
+                  className=""
                   dangerouslySetInnerHTML={{
                     __html: DOMPurify.sanitize(
                       typeof selectedArticle?.description === "string"
@@ -167,7 +167,7 @@ export default function DisplayModal({
                 {/* Content */}
                 {selectedArticle?.["content:encoded"] && (
                   <div
-                    className="text-gray-200"
+                    className=""
                     dangerouslySetInnerHTML={{
                       __html: DOMPurify.sanitize(
                         selectedArticle["content:encoded"]

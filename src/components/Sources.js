@@ -63,8 +63,8 @@ export default function Sources({ setSelectedSource, selectedSourceURL }) {
                       "w-full overflow-x-auto overflow-y-hidden justify-start px-3 text-xs md:text-base " +
                       (itemIndex === tempSourceIndex &&
                       categoryIndex === tempCategoryIndex
-                        ? "bg-primary hover:bg-primary hover:text-primary-foreground text-primary-foreground"
-                        : "hover:bg-primary hover:text-primary-foreground")
+                        ? "bg-foreground hover:bg-primary hover:text-primary-foreground text-primary-foreground"
+                        : "hover:bg-foreground hover:text-primary-foreground")
                     }
                     onClick={() => {
                       setTempSourceIndex(itemIndex);
