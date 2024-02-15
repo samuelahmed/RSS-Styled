@@ -65,7 +65,10 @@ TableHead.displayName = "TableHead"
 const TableCell = React.forwardRef(({ className, ...props }, ref) => (
   <td
     ref={ref}
-    className={cn("p-1 align-middle [&:has([role=checkbox])]:pr-0", className)}
+    // className={cn("p-1 align-middle [&:has([role=checkbox])]:pr-0", className)}
+    // Fix the overflow issue
+    className={cn("p-1 h-5 overflow-hidden whitespace-nowrap text-overflow-ellipsis align-middle [&:has([role=checkbox])]:pr-0", className)}
+
     {...props}
   />
 ))

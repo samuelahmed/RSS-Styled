@@ -89,12 +89,9 @@ export default function Feed({
                 ref={index === tempArticleIndex ? itemRef : null}
                 className={
                   tempArticleIndex === index
-                    ? "bg-foreground hover:bg-primary text-primary-foreground cursor-pointer"
-                    : "hover:bg-foreground hover:text-primary-foreground cursor-pointer"
-                }
-
-
-                
+                    ? "bg-foreground hover:bg-primary text-primary-foreground cursor-pointer overflow-hidden"
+                    : "hover:bg-foreground hover:text-primary-foreground cursor-pointer overflow-hidden"
+                }                
                 onClick={() => {
                   setTempArticleIndex(index);
                   setSelectedArticleIndex(index);
