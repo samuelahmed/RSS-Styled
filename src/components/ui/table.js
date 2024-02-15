@@ -42,7 +42,7 @@ const TableRow = React.forwardRef(({ className, ...props }, ref) => (
   <tr
     ref={ref}
     className={cn(
-      "border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted",
+      "border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted text-base",
       className
     )}
     {...props}
@@ -67,7 +67,7 @@ const TableCell = React.forwardRef(({ className, ...props }, ref) => (
     ref={ref}
     // className={cn("p-1 align-middle [&:has([role=checkbox])]:pr-0", className)}
     // Fix the overflow issue
-    className={cn("p-1 h-5 overflow-hidden whitespace-nowrap text-overflow-ellipsis align-middle [&:has([role=checkbox])]:pr-0", className)}
+    className={cn("p-1 h-6 overflow-hidden whitespace-nowrap text-overflow-ellipsis align-middle [&:has([role=checkbox])]:pr-0", className)}
 
     {...props}
   />
