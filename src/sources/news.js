@@ -2,9 +2,10 @@ const newsSources = [
   {
     slug: "politico",
     title: "Politico",
-    url: "https://www.politico.com/rss/politicopicks.xml",
+    url: "https://rss.politico.com/politics-news.xml",
   },
   {
+    
     slug: "new-york-times-homepage",
     title: "NYT Home Page",
     url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
